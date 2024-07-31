@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API SERVER</title>
+</head>
+<body>
+    <script>
+        // Define your JSON object
+        const myJsonObject = {
+            url1: "https://www.bing.com",
+            url2: "https://www.reactnative.dev",
+            url3: "https://www.google.com",
+        };
+
+        // Convert the object to a JSON string
+        const jsonString = JSON.stringify(myJsonObject);
+
+        // Set the response content type to JSON
+        document.contentType = "application/json";
+
+        // Output the JSON string
+        document.write(jsonString);
+    </script>
+</body>
+</html>
