@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Engineering Tool</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<style>
+  .header-text {
+    margin: 10px 0 10px 0;
+    font-size: medium;
+    font-weight: bold;
+  }
+
+</style>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="container mx-auto my-10 p-6 bg-white shadow-xl rounded-lg grid grid-cols-2 gap-6 border border-gray-200">
+    <!-- Left Column: Tab Navigation & Input Fields -->
+    <div class="space-y-4 p-4">
+      <h2 class="text-2xl font-bold text-blue-600">Prompt Configuration</h2>
+
+      <!-- Tab Navigation -->
+      <div class="flex space-x-4 border-b pb-2">
+        <button onclick="showTab('ideas')" id="tab-ideas"
+          class="px-4 py-2 bg-gray-300 rounded-t-lg">Ideas/Solutions</button>
+        <button onclick="showTab('learning')" id="tab-learning"
+          class="px-4 py-2 bg-blue-500 text-white rounded-t-lg">Learning</button>
+      </div>
+
+      <!-- Ideas/Solutions Tab -->
+      <div id="ideas-tab" class="tab-content hidden">
+        <label class="header-text block text-gray-700">Topic (Problem/Requirement Description)</label>
+        <input id="ideas-topic" type="text" placeholder="Enter problem or requirement..."
+          class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+
+        <label class="header-text block text-gray-700 mt-2">Core Component Analysis</label>
+        <select id="core-component" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>Detailed analysis</option>
+          <option>Summary analysis</option>
+          <option>High-level overview</option>
+        </select>
+
+        <label class="header-text block text-gray-700 mt-2">Implementation Strategies</label>
+        <select id="implementation-strategies" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>Step-by-step plan</option>
+          <option>Overview of methods</option>
+          <option>In-depth approach</option>
+        </select>
+
+        <label class="header-text block text-gray-700 mt-2">Technical Considerations</label>
+        <select id="technical-considerations" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>Detailed breakdown</option>
+          <option>Key considerations</option>
+          <option>Brief summary</option>
+        </select>
+
+        <label class="header-text block text-gray-700 mt-2">Success Metrics</label>
+        <select id="success-metrics" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>Quantitative metrics</option>
+          <option>Qualitative metrics</option>
+          <option>Combined approach</option>
+        </select>
+
+        <label class="header-text block text-gray-700 mt-2">Best Practices & Recommendations</label>
+        <select id="best-practices" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>Comprehensive recommendations</option>
+          <option>Concise tips</option>
+          <option>Bullet point list</option>
+        </select>
+        <p class="text-sm text-gray-500 mt-1">For more information on prompt engineering, consider researching best
+          practices online.</p>
+      </div>
+
+      <!-- Learning Tab -->
+      <div id="learning-tab" class="tab-content">
+        <label class="header-text block text-gray-700">Learning topic</label>
+        <input id="content-input" type="text" placeholder="Enter topic..."
+          class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+
+        <label class="header-text block text-gray-700">Exercise type</label>
+        <select id="exercise-type" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>PROBLEM_SOLVING</option>
+          <option>MULTIPLE_CHOICE</option>
+          <option>DISCUSSION</option>
+        </select>
+
+        <label class="header-text block text-gray-700">Number of exercises</label>
+        <select id="num-exercises" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>3</option>
+          <option>5</option>
+          <option>10</option>
+        </select>
+
+        <label class="header-text block text-gray-700">Thinking requirement level</label>
+        <select id="thinking-level" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>LOW</option>
+          <option>MEDIUM</option>
+          <option>HIGH</option>
+        </select>
+
+        <label class="header-text block text-gray-700">Detail level</label>
+        <select id="detail-level" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>LOW</option>
+          <option>MEDIUM</option>
+          <option>HIGH</option>
+        </select>
+
+        <label class="header-text block text-gray-700">Context</label>
+        <select id="context" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>Machine Learning</option>
+          <option>Data Science</option>
+          <option>Software Development</option>
+          <option>Cybersecurity</option>
+          <option>Cloud Computing</option>
+          <option>Artificial Intelligence</option>
+          <option>Business Strategy</option>
+          <option>Health & Medicine</option>
+          <option>Physics & Engineering</option>
+          <option>Environmental Science</option>
+        </select>
+
+        <label class="header-text block text-gray-700">Special requirements</label>
+        <select id="special-requirements" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>NONE</option>
+          <option>INCLUDE_CRITICAL_SOLUTIONS</option>
+          <option>USE_ADVANCED_TECHNIQUES</option>
+          <option>APPLY_LATEST_RESEARCH</option>
+          <option>REAL_WORLD_EXAMPLES</option>
+          <option>INTERACTIVE_EXERCISES</option>
+          <option>CODE_IMPLEMENTATION</option>
+          <option>HIGHLY_VISUAL</option>
+          <option>DATA_ANALYSIS_REQUIRED</option>
+          <option>HANDS_ON_PRACTICE</option>
+        </select>
+
+        <label class="header-text block text-gray-700">Output format</label>
+        <select id="output-format" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>PLAIN_TEXT</option>
+          <option>NUMBERED_LIST</option>
+          <option>BULLET_POINTS</option>
+          <option>TABLE</option>
+          <option>JSON</option>
+        </select>
+
+        <label class="header-text block text-gray-700">Language</label>
+        <select id="language" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-400">
+          <option>VIETNAMESE</option>
+          <option>ENGLISH</option>
+          <option>SPANISH</option>
+        </select>
+
+        <label class="header-text block text-gray-700">Include Python Code</label>
+        <input type="checkbox" id="include-python-code" class="mr-2">
+        <span class="text-gray-600">Check to include Python code in the prompt</span>
+        <span class="text-gray-600">Check to include Python code in the prompt</span>
+      </div>
+
+      <button onclick="generatePrompt()"
+        class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 font-semibold">Generate Prompt</button>
+    </div>
+
+    <!-- Right Column: Output Field -->
+    <div class="p-4">
+      <h2 class="text-2xl font-bold text-green-600 mb-2">Generated Prompt</h2>
+      <textarea id="generated-prompt"
+        class="w-full h-60 p-2 border rounded bg-gray-50 focus:ring-2 focus:ring-green-400"
+        placeholder="Generated prompt will appear here..."></textarea>
+      <button onclick="copyToClipboard()"
+        class="mt-2 w-full bg-green-500 text-white p-2 rounded hover:bg-green-600 font-semibold">Copy to
+        Clipboard</button>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tab) {
+      document.getElementById('learning-tab').classList.add('hidden');
+      document.getElementById('ideas-tab').classList.add('hidden');
+      document.getElementById('tab-learning').classList.remove('bg-blue-500', 'text-white');
+      document.getElementById('tab-ideas').classList.remove('bg-blue-500', 'text-white');
+      document.getElementById('tab-learning').classList.add('bg-gray-300');
+      document.getElementById('tab-ideas').classList.add('bg-gray-300');
+
+      document.getElementById(`${tab}-tab`).classList.remove('hidden');
+      document.getElementById(`tab-${tab}`).classList.add('bg-blue-500', 'text-white');
+    }
+
+    function generatePrompt() {
+      let prompt = '';
+      if (!document.getElementById('ideas-tab').classList.contains('hidden')) {
+        // Generate prompt for Ideas/Solutions
+        const topic = document.getElementById('ideas-topic').value;
+        const core = document.getElementById('core-component').value;
+        const implementation = document.getElementById('implementation-strategies').value;
+        const technical = document.getElementById('technical-considerations').value;
+        const metrics = document.getElementById('success-metrics').value;
+        const bestPractices = document.getElementById('best-practices').value;
+        prompt = `Topic: ${topic}\n\nPlease provide a detailed breakdown following this structure:\n\n1. Core Component Analysis: ${core}\n2. Implementation Strategies: ${implementation}\n3. Technical Considerations: ${technical}\n4. Success Metrics: ${metrics}\n5. Best Practices & Recommendations: ${bestPractices}`;
+      } else {
+        // Generate prompt for Learning
+        const topic = document.getElementById('content-input').value;
+        const exerciseType = document.getElementById('exercise-type').value;
+        const numExercises = document.getElementById('num-exercises').value;
+        const thinkingLevel = document.getElementById('thinking-level').value;
+        const detailLevel = document.getElementById('detail-level').value;
+        const context = document.getElementById('context').value;
+        const specialReq = document.getElementById('special-requirements').value;
+        const outputFormat = document.getElementById('output-format').value;
+        const language = document.getElementById('language').value;
+        const includePython = document.getElementById('include-python-code').checked;
+        // prompt = `Learning topic: ${topic}.\nExercise type: ${exerciseType}\nNumber of exercises: ${numExercises}\nThinking requirement level: ${thinkingLevel}\nDetail level: ${detailLevel}\nContext: ${context}`;
+        prompt = `
+1. Learning topic: ${topic}.
+2. Exercise type: ${exerciseType}
+3. Number of exercises to be created: ${numExercises}
+4. Thinking requirement level: ${thinkingLevel}
+5. Detail level: ${detailLevel}
+6. Context: ${context}
+7. Special requirements: ${specialReq}
+8. Output format: ${outputFormat}
+9. Language: [${language}]
+`;
+
+        if (includePython) {
+          prompt += `10. Show me Python code for verifying results and visualizing them with the Matplotlib animation library.`;
+        }
+      }
+      document.getElementById('generated-prompt').value = prompt;
+    }
+
+    function copyToClipboard() {
+      const textarea = document.getElementById('generated-prompt');
+      textarea.select();
+      document.execCommand('copy');
+      alert('Prompt copied to clipboard!');
+    }
+  </script>
+</body>
+
+</html>

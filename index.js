@@ -2,7 +2,7 @@ const navItems = [
     { title: "Trang chủ", link: "/", target: "_blank" },
     { title: "Contact", link: "#contact", target: "_blank" },
     { title: "Blog", link: "#blog", target: "_blank" },
-    { title: "Support", link: "#support", target: "_blank" },
+    { title: "PromtApp-v1", link: "/PromtAppv1/index.html", target: "_blank" },
     { title: "Support", link: "#support", target: "_blank" },
     { title: "Support", link: "#support", target: "_blank" },
     { title: "Support", link: "#support", target: "_blank" },
