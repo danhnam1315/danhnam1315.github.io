@@ -1,1 +1,60 @@
-{"url1":"https://www.bing.com","url2":"https://www.reactnative.dev","url3":"https://www.google.com"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptApp Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #2d2d2d;
+            padding: 20px;
+        }
+        .nav-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            max-width: 90%;
+            width: 400px;
+        }
+        .nav-item {
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .nav-item:hover {
+            filter: brightness(85%);
+            transform: scale(1.1);
+        }
+        .nav-item:active {
+            transform: scale(0.9);
+        }
+        @media (max-width: 600px) {
+            .nav-container {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            }
+            .nav-item {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container" id="navContainer"></div>
+    <script src="./index.js"></script>
+    <script>
+        // JS code in here!!
+    </script>
+</body>
+</html>
