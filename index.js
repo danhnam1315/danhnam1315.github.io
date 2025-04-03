@@ -5,6 +5,7 @@ const navItems = [
     { title: "01-Phân tích văn bản", link: "/PromtAppv1/01-phanTichVanBan.html", target: "_blank" },
     { title: "02-Giải nghĩa nhanh từ khóa", link: "/PromtAppv1/02-GiaiNghiaNhanhTuKhoa.html", target: "_blank" },
     { title: "03-Dịch thuật sát nghĩa", link: "/PromtAppv1/03-DichThuatSatNghia.html", target: "_blank" },
+    { title: "04-Prompt Translator App", link: "/PromtAppv1/04-PromptTranslatorApp.html", target: "_blank" },
     { title: "Support", link: "#support", target: "_blank" },
     { title: "Support", link: "#support", target: "_blank" },
     { title: "Support", link: "#support", target: "_blank" },
