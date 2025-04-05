@@ -8,7 +8,7 @@ const navItems = [
     { title: "04-Prompt Translator App", link: "/PromtAppv1/04-PromptTranslatorApp.html", target: "_blank" },
     { title: "05-Text Summary App", link: "/PromtAppv1/05-TextSummary.html", target: "_blank" },
     { title: "06-Gen Slide Latex Code", link: "/PromtAppv1/06-GenSlideLatexCode.html", target: "_blank" },
-    { title: "07-Promt Gen Content", link: "/PromtAppv1/07-Promt-Gen-Content.html", target: "_blank" },
+    { title: "Support", link: "#", target: "_blank" },
     { title: "Support", link: "#support", target: "_blank" },
     { title: "Support", link: "#support", target: "_blank" },
     { title: "Support", link: "#support", target: "_blank" },

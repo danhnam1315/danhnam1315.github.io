@@ -31,38 +31,84 @@
     const inputString = document.getElementById('inputString');
     const outputString = document.getElementById('outputString');
 
-    const template = `
-    Your task is to generate LaTeX code for a presentation that explains the concept M = [Topic] to someone new to the field. You will provide the outline of the content for this presentation. Your output should be a complete LaTeX document using the 'beamer' class, with the content structured into individual slides using the '\begin{frame}' and '\begin{frame}' environments.
+    const template = `Create a comprehensive LaTeX presentation using the beamer class to explain [LONG_PARAGRAPHS]. Generate a complete, ready-to-compile LaTeX document that includes:
 
-M = “”
-[LONG_PARAGRAPHS]
+DOCUMENT STRUCTURE:
+- Full preamble with necessary packages and configurations
+- Title slide with presentation metadata
+- Table of contents
+- 15 content slides
+- References/closing slide
 
-“”
+REQUIRED PACKAGES:
+\\documentclass{beamer}
+\\usepackage[utf8]{inputenc}
+\\usepackage{amsmath,amssymb}
+\\usepackage{graphicx}
+\\usepackage{hyperref}
+\\usepackage{xcolor}
+\\usepackage{tikz}
 
-For each point in the outline you provide, please generate LaTeX code for a corresponding slide that includes:
+SLIDE CONTENT REQUIREMENTS:
+Each content slide must contain:
+1. Clear title reflecting the subtopic
+2. Concise bullet points (maximum 5 per slide)
+3. One of the following visual elements:
+   - TikZ diagram
+   - Mathematical equation
+   - Table
+   - Itemized list
+4. A practical example or application
+5. A key takeaway box at the bottom
 
-* A clear and concise explanation of the concept, avoiding jargon.
-* A relevant real-world example or analogy.
-* A brief mention of a practical application.
-* A description of a visual aid (like a diagram or image) that would help illustrate the point.
-* An easy-to-remember tip or key takeaway, if applicable.
+PRESENTATION STRUCTURE:
+1. Introduction (2 slides)
+   - Topic overview
+   - Learning objectives
+2. Core Concepts (8 slides)
+   - Key definitions
+   - Fundamental principles
+   - Technical details
+3. Applications (3 slides)
+   - Real-world examples
+   - Case studies
+4. Practice & Implementation (2 slides)
+   - Exercises
+   - Common pitfalls
+5. Summary & References (1 slide)
 
-The language of the content within the LaTeX slides must be Vietnamese.
+STYLING GUIDELINES:
+1. Use the Madrid theme
+2. Apply consistent color scheme:
+   - Primary: blue
+   - Secondary: orange
+   - Emphasis: red
+3. Include progress bar
+4. Number all slides
+5. Add footer with section navigation
 
-Your LaTeX code should adhere to the following principles for effective slides:
+TECHNICAL SPECIFICATIONS:
+1. All mathematical formulas must use proper LaTeX notation
+2. Include \\pause commands for step-by-step reveals
+3. Use \\alert{} for emphasis
+4. Implement overlay specifications where appropriate
+5. Include proper cross-referencing
 
-1.  **Clarity:** Use simple language and avoid overly complex sentences.
-2.  **Conciseness:** Keep the text on each slide brief and to the point.
-3.  **Visual Appeal:** Include descriptions of visuals to enhance understanding.
-4.  **Logical Flow:** Ensure the slides follow a natural progression of ideas.
-5.  **Engagement:** Use relatable examples and analogies.
-6.  **Understanding:** Focus on making the concept accessible to a beginner.
-7.  **Actionable Insights:** Provide key takeaways or next steps.
-8. **Create total 10 - 15 slides for me**
+The final output should be a complete, compilable LaTeX document that creates a professional, educational presentation suitable for classroom or workshop use. Include comments explaining complex code sections and any specific compilation requirements.
 
-The complete output must be a valid LaTeX document starting with '\documentclass{beamer}' and including '\begin{document}' and '\end{document}' tags, with the presentation content structured within '\begin{frame}' environments.
+Example structure:
+\\documentclass{beamer}
+[Package imports]
+\\usetheme{Madrid}
+[Theme customization]
+\\title{[Topic]}
+\\author{[Author]}
+\\date{\\today}
 
-Feel free to add some fun and accessible emotes within the LaTeX comments or slide content where appropriate! 🚀`;
+\\begin{document}
+\\frame{\\titlepage}
+[Content frames]
+\\end{document}`;
 
     generateBtn.addEventListener('click', () => {
       const userText = inputString.value.trim();
