@@ -42,8 +42,12 @@ DOCUMENT STRUCTURE:
 
 REQUIRED PACKAGES:
 \\documentclass{beamer}
-\\usepackage[utf8]{inputenc}
-\\usepackage{amsmath,amssymb}
+\\usepackage[utf8]{inputenc}    % UTF-8 encoding support
+\\usepackage[vietnamese]{babel} % Vietnamese language support
+\\usepackage[T1]{fontenc}       % Font encoding
+\\usepackage{amsmath,amssymb}   % Mathematical formulas
+\\usepackage{newtxtext,newtxmath} % Times New Roman font
+\\usepackage{geometry}          % Page geometry
 \\usepackage{graphicx}
 \\usepackage{hyperref}
 \\usepackage{xcolor}
@@ -51,8 +55,8 @@ REQUIRED PACKAGES:
 
 SLIDE CONTENT REQUIREMENTS:
 Each content slide must contain:
-1. Clear title reflecting the subtopic
-2. Concise bullet points (maximum 5 per slide)
+1. Clear title in Vietnamese
+2. Concise bullet points in Vietnamese (maximum 5 per slide)
 3. One of the following visual elements:
    - TikZ diagram
    - Mathematical equation
@@ -93,21 +97,46 @@ TECHNICAL SPECIFICATIONS:
 3. Use \\alert{} for emphasis
 4. Implement overlay specifications where appropriate
 5. Include proper cross-referencing
-
-The final output should be a complete, compilable LaTeX document that creates a professional, educational presentation suitable for classroom or workshop use. Include comments explaining complex code sections and any specific compilation requirements.
+6. All text content must be in Vietnamese language
 
 Example structure:
 \\documentclass{beamer}
-[Package imports]
+\\usepackage[utf8]{inputenc}
+\\usepackage[vietnamese]{babel}
+\\usepackage[T1]{fontenc}
+\\usepackage{amsmath,amssymb}
+\\usepackage{newtxtext,newtxmath}
+\\usepackage{geometry}
+\\usepackage{graphicx}
+\\usepackage{hyperref}
+\\usepackage{xcolor}
+\\usepackage{tikz}
+
 \\usetheme{Madrid}
-[Theme customization]
+\\definecolor{primarycolor}{RGB}{0,114,178}
+\\definecolor{secondarycolor}{RGB}{213,94,0}
+\\definecolor{emphasiscolor}{RGB}{204,0,0}
+
+\\setbeamercolor{title}{fg=primarycolor}
+\\setbeamercolor{frametitle}{fg=primarycolor}
+\\setbeamercolor{structure}{fg=primarycolor}
+
 \\title{[Topic]}
 \\author{[Author]}
+\\institute{[Institute]}
 \\date{\\today}
 
 \\begin{document}
+
 \\frame{\\titlepage}
+
+\\begin{frame}
+\\frametitle{Nội Dung}
+\\tableofcontents
+\\end{frame}
+
 [Content frames]
+
 \\end{document}`;
 
     generateBtn.addEventListener('click', () => {
