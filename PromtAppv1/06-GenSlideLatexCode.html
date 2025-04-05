@@ -31,7 +31,11 @@
     const inputString = document.getElementById('inputString');
     const outputString = document.getElementById('outputString');
 
-    const template = `Create a comprehensive LaTeX presentation using the beamer class to explain [LONG_PARAGRAPHS]. Generate a complete, ready-to-compile LaTeX document that includes:
+    const template = `
+Create a comprehensive LaTeX presentation using the beamer class to explain [LONG_PARAGRAPHS]. If I provide a template.txt file containing the latex code template, you need to rely on it to generate latex code closest to the template, if not you dont need it. Generate a complete, 
+
+Ready-to-compile LaTeX document that includes:
+
 
 DOCUMENT STRUCTURE:
 - Full preamble with necessary packages and configurations
@@ -39,6 +43,21 @@ DOCUMENT STRUCTURE:
 - Table of contents
 - 15 content slides
 - References/closing slide
+
+- Professional academic formatting
+- Clean, readable code structure
+- Ready-to-compile format
+- Proper section/subsection hierarchy
+- Consistent theme and color scheme
+- Mathematical equations support
+- Graphics/figure compatibility
+- Citation management
+
+- All content using Vietnamese end to end or Keep first input Languages.
+- Your response must Without explaining, focus in code without using canvas
+
+Optional Template Integration:
+If a template.txt file is provided, the generated code will strictly follow its structure and styling. Otherwise, standard professional beamer formatting will be implemented.
 
 REQUIRED PACKAGES:
 \\documentclass{beamer}
