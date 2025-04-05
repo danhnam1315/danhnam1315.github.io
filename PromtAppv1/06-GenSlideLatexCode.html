@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text Summary</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light p-4">
+
+  <div class="container">
+    <h2 class="mb-4">06-Gen Slide Latex Code</h2>
+    <div class="mb-3">
+      <label for="inputString" class="form-label">Nhập văn bản (Paste vào đây):</label>
+      <textarea class="form-control" id="inputString" rows="8"></textarea>
+    </div>
+    <button class="btn btn-primary mb-3 w-100" id="generateBtn">Generate</button>
+
+    <div class="mb-3">
+      <label for="outputString" class="form-label">Kết quả:</label>
+      <textarea class="form-control" id="outputString" rows="10" readonly></textarea>
+    </div>
+    <button class="btn btn-success w-100" id="copyBtn">Copy It</button>
+  </div>
+
+  <script>
+    const generateBtn = document.getElementById('generateBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const inputString = document.getElementById('inputString');
+    const outputString = document.getElementById('outputString');
+
+    const template = `
+    Your task is to generate LaTeX code for a presentation that explains the concept M = [Topic] to someone new to the field. You will provide the outline of the content for this presentation. Your output should be a complete LaTeX document using the 'beamer' class, with the content structured into individual slides using the '\begin{frame}' and '\begin{frame}' environments.
+
+M = “”
+[LONG_PARAGRAPHS]
+
+“”
+
+For each point in the outline you provide, please generate LaTeX code for a corresponding slide that includes:
+
+* A clear and concise explanation of the concept, avoiding jargon.
+* A relevant real-world example or analogy.
+* A brief mention of a practical application.
+* A description of a visual aid (like a diagram or image) that would help illustrate the point.
+* An easy-to-remember tip or key takeaway, if applicable.
+
+The language of the content within the LaTeX slides must be Vietnamese.
+
+Your LaTeX code should adhere to the following principles for effective slides:
+
+1.  **Clarity:** Use simple language and avoid overly complex sentences.
+2.  **Conciseness:** Keep the text on each slide brief and to the point.
+3.  **Visual Appeal:** Include descriptions of visuals to enhance understanding.
+4.  **Logical Flow:** Ensure the slides follow a natural progression of ideas.
+5.  **Engagement:** Use relatable examples and analogies.
+6.  **Understanding:** Focus on making the concept accessible to a beginner.
+7.  **Actionable Insights:** Provide key takeaways or next steps.
+8. **Create total 10 - 15 slides for me**
+
+The complete output must be a valid LaTeX document starting with '\documentclass{beamer}' and including '\begin{document}' and '\end{document}' tags, with the presentation content structured within '\begin{frame}' environments.
+
+Feel free to add some fun and accessible emotes within the LaTeX comments or slide content where appropriate! 🚀`;
+
+    generateBtn.addEventListener('click', () => {
+      const userText = inputString.value.trim();
+      if (userText === "") {
+        alert("Vui lòng nhập nội dung vào ô văn bản!");
+        return;
+      }
+      const output = template.replace('LONG_PARAGRAPHS', userText);
+      outputString.value = output;
+    });
+
+    copyBtn.addEventListener('click', () => {
+      outputString.select();
+      document.execCommand('copy');
+      alert('Đã copy nội dung vào clipboard!');
+    });
+  </script>
+
+</body>
+
+</html>
