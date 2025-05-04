@@ -30,7 +30,36 @@
     const copyBtn = document.getElementById('copyBtn');
     const inputString = document.getElementById('inputString');
     const outputString = document.getElementById('outputString');
-
+    const template1 = `[LONG_POST]
+Role: Expert Content Analyzer
+Task: Analyze and smart-summarize POST. 
+Analysis requirements:
+1. Structure breakdown:
+- Main topic
+- Core arguments
+- Key evidence/examples
+- Conclusions
+2. Summary format:
+- Max 5 main bullet points
+- 15 words max per point
+- Priority-based ordering
+- Highlight key terms
+3. Value extraction:
+- 3 key insights
+- 2 lessons learned
+- 1 actionable step
+Required output:
+1. Brief summary (150 words)
+2. Clear structure
+3. Easy to read/remember
+4. Practical, immediately applicable
+5. Bullet-point format
+Additional focus:
+- Essential information only
+- Clear hierarchy
+- Action-oriented takeaways
+- Quick-scan format
+6. Response all with Vietnamese end to end.`
     const template = `1.  **Summarize the main content of the PARAGRAPHS.** Focus on the most important information that the PARAGRAPHS wants to convey.
 2.  **List 3-5 of the most important keywords or phrases** that appear in the PARAGRAPHS. These are the key words/phrases that help the reader understand the topic and core content of the PARAGRAPHS.
 3.  **Identify the main idea** that the PARAGRAPHS is presenting or supporting. This idea may be an argument, a finding, an explanation, or a step in the research process.
@@ -47,6 +76,7 @@ LONG_PARAGRAPHS
         return;
       }
       const output = template.replace('LONG_PARAGRAPHS', userText);
+      // const output = template.replace('LONG_POST', userText);
       outputString.value = output;
     });
 
