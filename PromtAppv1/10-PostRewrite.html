@@ -14,6 +14,7 @@
     <h2 class="mb-4">10-PostRewrite</h2>
     <div class="mb-3">
       <select id="select1" class="form-select" aria-label="Phong cách prompt">
+        <option value="4">Phong Cách 4-Đột phá</option>
         <option value="1">Phong Cách 1</option>
         <option value="2">Phong Cách 2</option>
         <option value="3">Phong Cách 3</option>
@@ -53,6 +54,23 @@ Rewrite POST with compelling psychological hooks and vivid descriptions, creatin
 POST = [LONG_POST]
 Transform POST into a captivating narrative that resonates deeply with readers, using clear, engaging language and emotional storytelling techniques to make the content more accessible and impactful.Response all with Vietnamese end to end.Without using Canvas.`;
 
+  const template4 = `# FORGET ALL CONTENT BEFORE.
+Without using Canvas.
+Improved Prompt:
+Rewritten Prompt: [X_improved]
+You are a seasoned content strategist and creative wordsmith, tasked with transforming and elevating existing written material. Your objective is to comprehensively enhance and rewrite the provided article, meticulously analyzing its strengths and weaknesses to craft a significantly more engaging and compelling version than the original. It is imperative that you completely avoid using the original author's name and directly quoting any phrases from the source. Instead, employ a rich, diverse lexicon of synonyms, analogous expressions, and innovative sentence structures to convey the core message. The rewritten content must feature a natural, deeply relatable, and distinctly human voice. Its tone should be irresistibly captivating, exceptionally memorable, and possess strong viral potential, ensuring it is concise, intuitively understandable, and leaves a profound, lasting impression on the reader, while strictly adhering to best practices to prevent any form of plagiarism.
+
+Meta-prompt:
+Create a quality checklist for the following prompt: "You are a seasoned content strategist and creative wordsmith, tasked with transforming and elevating existing written material. Your objective is to comprehensively enhance and rewrite the provided article, meticulously analyzing its strengths and weaknesses to craft a significantly more engaging and compelling version than the original. It is imperative that you completely avoid using the original author's name and directly quoting any phrases from the source. Instead, employ a rich, diverse lexicon of synonyms, analogous expressions, and innovative sentence structures to convey the core message. The rewritten content must feature a natural, deeply relatable, and distinctly human voice. Its tone should be irresistibly captivating, exceptionally memorable, and possess strong viral potential, ensuring it is concise, intuitively understandable, and leaves a profound, lasting impression on the reader, while strictly adhering to best practices to prevent any form of plagiarism." The checklist should consist of 5 distinct evaluation criteria to assess the effectiveness of the rewritten article.
+
+Checklist:
+Radical Transformation & Plagiarism-Free: Is the rewritten article a complete reimagining of the original, rigorously avoiding the original author's name and direct quotes, and demonstrating absolute originality in phrasing?
+Superior Impact & Engagement: Does the new version demonstrably surpass the original in terms of impact and reader engagement, effectively addressing prior weaknesses and amplifying strengths?
+Authentic, Relatable Human Voice: Is the language genuinely conversational, natural, and deeply relatable, forging an immediate connection with the human reader?
+High Memorability & Viral Appeal: Is the content crafted for maximum recall and shareability, possessing inherent qualities that encourage widespread dissemination and stickiness?
+Clarity, Conciseness, & Intuitive Flow: Is the message conveyed with ultimate clarity and brevity, devoid of unnecessary complexity, and presented in a way that is immediately understandable and compelling?
+Response all with Vietnamese end to end.`;
+
     generateBtn.addEventListener('click', () => {
       const selectStyle = document.querySelector('#select1').value;
       // console.log('selectStyle: ', selectStyle)
@@ -70,6 +88,9 @@ Transform POST into a captivating narrative that resonates deeply with readers, 
       }
       if (selectStyle == 3) {
         output = template3.replace('LONG_POST', userText);
+      }
+      if (selectStyle == 4) {
+        output = template4.replace('X_improved', userText);
       }
       // const output = template.replace('YOUTUBE_LINK', userText);
       outputString.value = output;
