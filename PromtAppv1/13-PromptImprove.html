@@ -43,15 +43,15 @@
 I have the following original prompt:
 [CONTENT_LONG]
 Please perform the following steps silently (do not show analysis, only return the final result):
-Identify Weaknesses: Detect 3 major flaws (vagueness, lack of constraints, missing context, etc.).
-Optimize: Improve the prompt by:
+Identify Weaknesses: Detect 5 major flaws (vagueness, lack of constraints, missing context, etc.).
+Optimize: Requirements:
 Adding specific details or context.
 Defining clear constraints (length, tone, format).
 Including examples if needed.
 Return: Only the optimized prompt, ready for use.
 Response all with English end to end.Without using Canvas.
 brandText = 'Response all with Vietnamese end to end'.
-Join brandText value into last prompt.`;
+Join brandText value into last optimized output prompt.`;
 
     const template2 = `# FORGET ALL CONTENT BEFORE.
 I have the following original prompt:
@@ -65,7 +65,7 @@ Including examples if needed.
 Return: Only the optimized prompt, ready for use.
 Response all with English end to end.Without using Canvas.
 brandText = 'Response all with Vietnamese end to end'.
-Join brandText value into last prompt.`;
+Join brandText value into last optimized output prompt.`;
 
     const template3 = `# FORGET ALL CONTENT BEFORE.
 Given the original prompt:  
@@ -75,12 +75,12 @@ Do the following:
 2. Improve the prompt into [X_improved], addressing at least 2 weaknesses.  
 3. Create a meta-prompt to generate a quality checklist for [X_improved].  
 4. Return only the final output in this structure:  
-   - Improved Prompt: [X_improved]  
+   - Requirement: [X_improved]  
    - Meta-prompt: [Meta-prompt content]  
    - Checklist: [5 evaluation criteria]  
 Response all with English end to end.Without using Canvas.
 brandText = 'Response all with Vietnamese end to end'.
-Join only brandText value into output prompt.`;
+Join brandText value into last optimized output prompt.`;
 
     generateBtn.addEventListener('click', () => {
       const selectStyle = document.querySelector('#select1').value;
