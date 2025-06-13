@@ -50,8 +50,9 @@ Defining clear constraints (length, tone, format).
 Including examples if needed.
 Return: Only the optimized prompt, ready for use.
 Response all with English end to end.Without using Canvas.
+Your prompt response as P1.
 brandText = 'Response all with Vietnamese end to end'.
-Join brandText value into last optimized output prompt.`;
+Join brandText value into tail of P1.`;
 
     const template2 = `# FORGET ALL CONTENT BEFORE.
 I have the following original prompt:
@@ -64,8 +65,9 @@ Defining clear constraints (length, tone, format).
 Including examples if needed.
 Return: Only the optimized prompt, ready for use.
 Response all with English end to end.Without using Canvas.
+Your prompt response as P1.
 brandText = 'Response all with Vietnamese end to end'.
-Join brandText value into last optimized output prompt.`;
+Join brandText value into tail of P1.`;
 
     const template3 = `# FORGET ALL CONTENT BEFORE.
 Given the original prompt:  
@@ -79,8 +81,9 @@ Do the following:
    - Meta-prompt: [Meta-prompt content]  
    - Checklist: [5 evaluation criteria]  
 Response all with English end to end.Without using Canvas.
+Your prompt response as P1.
 brandText = 'Response all with Vietnamese end to end'.
-Join brandText value into last optimized output prompt.`;
+Join brandText value into tail of P1.`;
 
     generateBtn.addEventListener('click', () => {
       const selectStyle = document.querySelector('#select1').value;
