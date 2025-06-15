@@ -14,6 +14,7 @@ const navItems = [
     { title: "12-Guide Translate", link: "/PromtAppv1/12-GuideTranslate.html", target: "_blank" },
     { title: "13-Prompt Improve", link: "/PromtAppv1/13-PromptImprove.html", target: "_blank" },
     { title: "14-Prompt Viết Bài Học Thuật", link: "/PromtAppv1/14-PromptVietBaiHocThuat.html", target: "_blank" },
+    { title: "15-Fix Bugs Python", link: "/PromtAppv1/15-FixBugPython.html", target: "_blank" },
     // { title: "Support", link: "#", target: "_blank" },
     // { title: "Support", link: "#support", target: "_blank" },
     // { title: "Support", link: "#support", target: "_blank" },
