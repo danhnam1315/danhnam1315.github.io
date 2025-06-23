@@ -48,7 +48,9 @@ Without using GPT4o-mini model.Without using Canvas.
         return;
       }
       const output = template.replace('LONG_PROMPTS', userText);
-      outputString.value = output;
+      idPrompt = new Date().getTime();
+      outputString.value = `#q${idPrompt}
+${output}`;
     });
 
     copyBtn.addEventListener('click', () => {

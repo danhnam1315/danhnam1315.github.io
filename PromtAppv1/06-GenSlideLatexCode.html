@@ -165,7 +165,9 @@ Example structure:
         return;
       }
       const output = template.replace('LONG_PARAGRAPHS', userText);
-      outputString.value = output;
+      idPrompt = new Date().getTime();
+      outputString.value = `#q${idPrompt}
+${output}`;
     });
 
     copyBtn.addEventListener('click', () => {

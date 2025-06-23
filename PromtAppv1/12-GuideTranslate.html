@@ -77,7 +77,9 @@ Transform POST into a captivating narrative that resonates deeply with readers, 
         output = template3.replace('LONG_POST', userText);
       }
       // const output = template.replace('YOUTUBE_LINK', userText);
-      outputString.value = output;
+      idPrompt = new Date().getTime();
+      outputString.value = `#q${idPrompt}
+${output}`;
     });
 
     copyBtn.addEventListener('click', () => {

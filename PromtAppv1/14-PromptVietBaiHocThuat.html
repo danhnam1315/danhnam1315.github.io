@@ -105,7 +105,9 @@ Join brandText value into tail of P1.`;
         output = template3.replace('LONG_POST', userText);
       }
       // const output = template.replace('YOUTUBE_LINK', userText);
-      outputString.value = output;
+      idPrompt = new Date().getTime();
+      outputString.value = `#q${idPrompt}
+${output}`;
     });
 
     copyBtn.addEventListener('click', () => {

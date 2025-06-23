@@ -45,7 +45,9 @@ LONG_PARAGRAPH
         return;
       }
       const output = template.replace('LONG_PARAGRAPH', userText);
-      outputString.value = output;
+      idPrompt = new Date().getTime();
+      outputString.value = `#q${idPrompt}
+${output}`;
     });
 
     copyBtn.addEventListener('click', () => {

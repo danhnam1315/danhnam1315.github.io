@@ -124,7 +124,9 @@ Tôi tên là Huy (My name is Huy).]`;
         output = template3.replace('YOUTUBE_LINK', userText);
       }
       // const output = template.replace('YOUTUBE_LINK', userText);
-      outputString.value = output;
+      idPrompt = new Date().getTime();
+      outputString.value = `#q${idPrompt}
+${output}`;
     });
 
     copyBtn.addEventListener('click', () => {

@@ -91,7 +91,9 @@ Response all with Vietnamese end to end.`;
         output = template4.replace('X_improved', userText);
       }
       // const output = template.replace('YOUTUBE_LINK', userText);
-      outputString.value = output;
+      idPrompt = new Date().getTime();
+      outputString.value = `#q${idPrompt}
+${output}`;
     });
 
     copyBtn.addEventListener('click', () => {
