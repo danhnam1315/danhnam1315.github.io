@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>16- Generate Any Code</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light p-4">
+
+  <div class="container">
+    <h2 class="mb-4">16- Generate Any Code</h2>
+    <div class="mb-3">
+      <select id="select1" class="form-select" aria-label="Phong cách prompt">
+        <option value="1">Phong Cách 1-Phổ thông</option>
+        <option value="3">Phong Cách 3-Đột phá</option>
+        <option value="2">Phong Cách 2-Tập trung</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="inputString1" class="form-label">Chức năng chính(A):</label>
+      <textarea class="form-control" id="inputString1" rows="4"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="inputString2" class="form-label">Ngôn ngữ sử dụng(B):</label>
+      <textarea class="form-control" id="inputString2" rows="2"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="inputString3" class="form-label">Phong cách(C):</label>
+      <textarea class="form-control" id="inputString3" rows="2"></textarea>
+    </div>
+    <button class="btn btn-primary mb-3 w-100" id="generateBtn">Generate</button>
+
+    <div class="mb-3">
+      <label for="outputString" class="form-label">Kết quả:</label>
+      <textarea class="form-control" id="outputString" rows="4"></textarea>
+    </div>
+    <button class="btn btn-success w-100" id="copyBtn">Copy It</button>
+  </div>
+
+  <script>
+    const generateBtn = document.getElementById('generateBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    let output = ""
+    const inputString1 = document.getElementById('inputString1');
+    const inputString2 = document.getElementById('inputString2');
+    const inputString3 = document.getElementById('inputString3');
+    const outputString = document.getElementById('outputString');
+
+    const template1 = `Generate a complete, end-to-end code snippet for a user-defined functionality A=[_A] in programming language B=[_B]. The code should adhere strictly to programming style C=[_C].
+When defining user-defined functionality A=[_A], provide a clear and concise description of the feature, including its purpose, inputs, expected outputs, and any specific requirements or edge cases. For instance, if A is "a function to calculate the nth Fibonacci number," specify if it should handle negative inputs or large numbers efficiently.
+For programming language B=[_B], specify the exact language, version, and any relevant libraries or frameworks that should be used (e.g., "Python 3.9 with NumPy," "Java 11," "JavaScript ES6 for Node.js").
+For programming style C=[_C], the output must consist only of the code. Do not include any preceding or trailing explanations, setup instructions, or conversational text. Every comment within the code must be in Vietnamese, providing clear and concise explanations for logic, variables, and functions. The code should be well-structured, readable, and follow best practices for the specified language.`;
+
+    const template3 = `Generate a complete and self-contained code solution that implements user-defined functionality A=[_A] using programming language B=_[B]. The code must strictly adhere to the following output format and commenting guidelines C=(_C).
+To provide your request, define:
+A=[_A] (User-Defined Functionality): Describe the feature clearly and concisely. Include its purpose, inputs, expected outputs, any specific requirements, performance considerations, or edge cases. For example: "A Python function calculate_area(shape, dimensions) that computes the area for 'circle' (radius) or 'rectangle' (length, width), handles invalid inputs by raising a ValueError."
+B=[_B] (Programming Language): Specify the exact language, its version, and any required libraries or frameworks. For example: "Python 3.9 with math module," "Java 11," or "JavaScript ES6 for Node.js using Express.js."
+C=[_C] (Output Format and Commenting Guidelines): The output must be solely the executable code. Do not include any introductory text, setup instructions, or conversational remarks outside the code block. All comments within the code must be in Vietnamese, providing clear, concise, and thorough explanations for logical steps, variable usage, function purposes, and important design decisions. The code should be well-structured, readable, include basic error handling and input validation where applicable, and follow widely accepted best practices for the specified language. Aim for a solution that is typically less than 200 lines of code unless the functionality explicitly demands more complexity.`;
+
+    const template2 = `Provide an optimal prompt for generating user-defined functionality A=[_A] in programming language B=[_B] with programming style C=[_C]. The prompt should clearly define the desired **user-defined functionality** (A). For **programming language [B]**.. For **programming style [C]**, the output must be end-to-end code only, with no explanations outside the code. All comments within the code must be in Vietnamese.`;
+
+    generateBtn.addEventListener('click', () => {
+      const selectStyle = document.querySelector('#select1').value;
+      // console.log('selectStyle: ', selectStyle)
+      const userText1 = inputString1.value.trim();
+      const userText2 = inputString2.value.trim();
+      const userText3 = inputString3.value.trim();
+
+      if (userText1 === "" || userText2 === "") {
+        alert("Vui lòng nhập nội dung vào ô văn bản!");
+        return;
+      }
+      if (selectStyle == 1) {
+        _A = template1.replace('_A', userText1);
+        _B = _A.replace('_B', userText2);
+        output = _B.replace('_C', userText3);
+      }
+      // if (selectStyle == 2) {
+      //   output = template2.replace('LONG_POST', userText);
+      // }
+      // if (selectStyle == 3) {
+      //   output = template3.replace('LONG_POST', userText);
+      // }
+      // const output = template.replace('YOUTUBE_LINK', userText);
+      idPrompt = new Date().getTime();
+      outputString.value = `#q${idPrompt}
+${output}`;
+    });
+
+    copyBtn.addEventListener('click', () => {
+      outputString.select();
+      document.execCommand('copy');
+      alert('Đã copy nội dung vào clipboard!');
+    });
+  </script>
+
+</body>
+
+</html>
