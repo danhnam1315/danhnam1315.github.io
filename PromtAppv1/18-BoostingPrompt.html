@@ -16,211 +16,205 @@
   <!-- //Lập ý tưởng giao dịch dựa trên MACD kết hợp RSI khả thi và ít bị nhiễu. -->
   <div class="container">
     <h2 class="mb-4">18-Boosting Prompt</h2>
+    <div class="row">
+      <div class="mb-3">
+        <div class="d-flex align-items-start">
+          <!-- Vertical Nav Pills -->
+          <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="pill" data-bs-target="#home" type="button"
+              role="tab" aria-controls="home" aria-selected="true">
+              01-Phân tích nguyên nhân gốc rễ
+            </button>
+            <button class="nav-link" id="profile-tab" data-bs-toggle="pill" data-bs-target="#profile" type="button"
+              role="tab" aria-controls="profile" aria-selected="false">
+              02-Chia để trị
+            </button>
+            <button class="nav-link" id="profile1-tab" data-bs-toggle="pill" data-bs-target="#profile1" type="button"
+              role="tab" aria-controls="profile1" aria-selected="false">
+              03-Phoenix Checklist
+            </button>
+            <!-- <button class="nav-link" id="item1" data-bs-toggle="pill" data-bs-target="#messages" type="button"
+              role="tab" aria-controls="messages" aria-selected="false">
+              Messages
+            </button> -->
+          </div>
 
-    <div class="mb-3">
-<div class="d-flex align-items-start">
-  <!-- Vertical Nav Pills -->
-  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-    <button 
-      class="nav-link active" 
-      id="home-tab" 
-      data-bs-toggle="pill" 
-      data-bs-target="#home" 
-      type="button" 
-      role="tab" 
-      aria-controls="home" 
-      aria-selected="true"
-    >
-      Home
-    </button>
-    <button 
-      class="nav-link" 
-      id="profile-tab" 
-      data-bs-toggle="pill" 
-      data-bs-target="#profile" 
-      type="button" 
-      role="tab" 
-      aria-controls="profile" 
-      aria-selected="false"
-    >
-      Profile
-    </button>
-    <button 
-      class="nav-link" 
-      id="profile1-tab" 
-      data-bs-toggle="pill" 
-      data-bs-target="#profile1" 
-      type="button" 
-      role="tab" 
-      aria-controls="profile1" 
-      aria-selected="false"
-    >
-      Profile 1
-    </button>
-    <button 
-      class="nav-link" 
-      id="messages-tab" 
-      data-bs-toggle="pill" 
-      data-bs-target="#messages" 
-      type="button" 
-      role="tab" 
-      aria-controls="messages" 
-      aria-selected="false"
-    >
-      Messages
-    </button>
-  </div>
+          <!-- Tab Content -->
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+              <div class="row">
+                <div class="mb-3">
+                  <select id="select1" class="form-select" aria-label="Phong cách prompt">
+                    <option value="1">Phong Cách 1-Phổ thông</option>
+                    <option value="3">Phong Cách 3-Đột phá</option>
+                    <option value="2">Phong Cách 2-Tập trung</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="inputString1" class="form-label">Nhập vấn đề cần phân tích (Paste vào đây):</label>
+                  <textarea class="form-control" id="inputString1" rows="4"></textarea><br />
+                  <button class="btn btn-primary mb-3 w-100" id="generateBtn1">Generate</button>
+                </div>
+                <div class="mb-3">
+                  <label for="outputString1" class="form-label">Kết quả:</label>
+                  <textarea class="form-control" id="outputString1" rows="4"></textarea><br />
+                  <button class="btn btn-success w-100" id="copyBtn1">Copy It</button>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+              <div class="row">
+                <div class="mb-3">
+                  <select id="select2" class="form-select" aria-label="Phong cách prompt">
+                    <option value="1">Phong Cách 1-Phổ thông</option>
+                    <option value="3">Phong Cách 3-Đột phá</option>
+                    <option value="2">Phong Cách 2-Tập trung</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="inputString2" class="form-label">Nhập vấn đề cần phân tích (Paste vào đây):</label>
+                  <textarea class="form-control" id="inputString2" rows="4"></textarea><br />
+                  <button class="btn btn-primary mb-3 w-100" id="generateBtn2">Generate</button>
+                </div>
+                <div class="mb-3">
+                  <label for="outputString2" class="form-label">Kết quả:</label>
+                  <textarea class="form-control" id="outputString2" rows="4"></textarea><br />
+                  <button class="btn btn-success w-100" id="copyBtn2">Copy It</button>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="profile1" role="tabpanel" aria-labelledby="profile1-tab" tabindex="0">
+              <div class="row">
+                <div class="mb-3">
+                  <select id="select3" class="form-select" aria-label="Phong cách prompt">
+                    <option value="1">Phong Cách 1-Phổ thông</option>
+                    <option value="3">Phong Cách 3-Đột phá</option>
+                    <option value="2">Phong Cách 2-Tập trung</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="inputString3" class="form-label">Nhập vấn đề cần phân tích (Paste vào đây):</label>
+                  <textarea class="form-control" id="inputString3" rows="4"></textarea><br />
+                  <button class="btn btn-primary mb-3 w-100" id="generateBtn3">Generate</button>
+                </div>
+                <div class="mb-3">
+                  <label for="outputString3" class="form-label">Kết quả:</label>
+                  <textarea class="form-control" id="outputString3" rows="4"></textarea><br />
+                  <button class="btn btn-success w-100" id="copyBtn3">Copy It</button>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="item1" tabindex="0">
+              Nội dung tab Messages
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Tab Content -->
-  <div class="tab-content" id="v-pills-tabContent">
-    <div 
-      class="tab-pane fade show active" 
-      id="home" 
-      role="tabpanel" 
-      aria-labelledby="home-tab" 
-      tabindex="0"
-    >
-      Nội dung tab Home
-    </div>
-    <div 
-      class="tab-pane fade" 
-      id="profile" 
-      role="tabpanel" 
-      aria-labelledby="profile-tab" 
-      tabindex="0"
-    >
-      Nội dung tab Profile
-    </div>
-    <div 
-      class="tab-pane fade" 
-      id="profile1" 
-      role="tabpanel" 
-      aria-labelledby="profile1-tab" 
-      tabindex="0"
-    >
-      Nội dung tab Profile 1
-    </div>
-    <div 
-      class="tab-pane fade" 
-      id="messages" 
-      role="tabpanel" 
-      aria-labelledby="messages-tab" 
-      tabindex="0"
-    >
-      Nội dung tab Messages
-    </div>
-  </div>
-</div>
-    </div>
-    <div class="mb-3">
-      <label for="explain" class="form-control">
-        <p><i>Cre(IBM): Kỹ thuật Tree of Thought (ToT) là một phương pháp nâng cao trong prompting, cho phép mô hình
-            ngôn ngữ khám phá và đánh giá nhiều con đường suy nghĩ khác nhau trước khi đưa ra câu trả lời cuối cùng.
-            Thay vì đưa ra một phản hồi tuyến tính, ToT mô phỏng quá trình tư duy phân nhánh của con người, trong đó mỗi
-            "nút" trong cây đại diện cho một suy nghĩ hoặc một bước trung gian, và các "nhánh" đại diện cho các lựa chọn
-            hoặc hướng đi khác nhau.</i></p>
-      </label>
-
-    </div>
-    <div class="mb-3">
-      <select id="select1" class="form-select" aria-label="Phong cách prompt">
-        <option value="1">Phong Cách 1-Phổ thông</option>
-        <option value="3">Phong Cách 3-Đột phá</option>
-        <option value="2">Phong Cách 2-Tập trung</option>
-      </select>
-    </div>
-    <div class="mb-3">
-      <label for="inputString" class="form-label">Nhập nội dung bài post (Paste vào đây):</label>
-      <textarea class="form-control" id="inputString" rows="4"></textarea>
-    </div>
-    <button class="btn btn-primary mb-3 w-100" id="generateBtn">Generate</button>
-
-    <div class="mb-3">
-      <label for="outputString" class="form-label">Kết quả:</label>
-      <textarea class="form-control" id="outputString" rows="4"></textarea>
-    </div>
-    <button class="btn btn-success w-100" id="copyBtn">Copy It</button>
   </div>
 
   <script>
-    const generateBtn = document.getElementById('generateBtn');
-    const copyBtn = document.getElementById('copyBtn');
-    let output = ""
-    const inputString = document.getElementById('inputString');
-    const outputString = document.getElementById('outputString');
+    const generateBtn1 = document.getElementById('generateBtn1');
+    const generateBtn2 = document.getElementById('generateBtn2');
+    const generateBtn3 = document.getElementById('generateBtn3');
+    const copyBtn1 = document.getElementById('copyBtn1');
+    const copyBtn2 = document.getElementById('copyBtn2');
+    const copyBtn3 = document.getElementById('copyBtn3');
+    let output1 = ""
+    let output2 = ""
+    let output3 = ""
+    const inputString1 = document.getElementById('inputString1');
+    const inputString2 = document.getElementById('inputString2');
+    const inputString3 = document.getElementById('inputString3');
+    const outputString1 = document.getElementById('outputString1');
+    const outputString2 = document.getElementById('outputString2');
+    const outputString3 = document.getElementById('outputString3');
 
     const template1 = `# FORGET ALL CONTENT BEFORE.
-Instructions: You will use the Tree of Thought method to solve a problem or develop an idea related to the following topic: [CONTENT_LONG].
-Step 1: Identify initial thought branches.
-Generate at least 3-5 different approaches to address the problem or develop the idea.
-Each approach represents a "branch" in the tree of thought.
-Briefly describe each branch and explain why it could be useful.
-Step 2: Analyze and evaluate each branch. For each identified branch, analyze its strengths, weaknesses, and practical applicability.
-If necessary, create additional sub-branches to explore deeper aspects of the main branch.
-Step 3: Select the optimal solution.
-Based on the analysis in Step 2, choose one branch or combine multiple branches to arrive at the final solution.
-Explain why this solution is considered optimal.
-Final Output: Provide a clear summary of the chosen solution or idea, including implementation steps if applicable.
-Without using Canvas.Response all with Vietnamese end to end.`;
+I'm facing the following problem: [MY_PROBLEM]. Please use the 5 Whys technique to help me identify the root cause. For each "why" question, provide a logical explanation and connect it to the previous answer until we reach the fundamental cause. Ensure the explanation for each "why" is concise (1-2 sentences) and directly addresses the previous answer. The final root cause should be actionable. Response all with Vietnamese end to end.
+Without using Canvas.`;
 
     const template2 = `# FORGET ALL CONTENT BEFORE.
-You are an explorer charting a map of possibilities for the topic: [CONTENT_LONG]. Your mission is to uncover multiple paths (thought branches) that could lead to treasure (solutions or creative ideas). Follow these steps:
-Step 1: Draw Initial Routes
-Sketch out at least 3-5 distinct routes on your map. Each route represents a unique approach to tackle the challenge or develop the idea.
-Label each route with its key features and why it might lead to success.
-Step 2: Test the Terrain
-For each route, assess the challenges (weaknesses) and opportunities (strengths). Are there hidden shortcuts (innovative angles) or dangerous cliffs (risks)?
-If needed, branch off into smaller trails to explore uncharted areas.
-Step 3: Choose the Best Path
-Based on your exploration, decide which route offers the most promising journey. Will you combine parts of different routes to create a hybrid path?
-Justify your choice by explaining how this path ensures a safe and rewarding expedition.
-Final Output:
-Present your chosen route as a clear itinerary, including milestones (key steps) to reach the destination.
-Without using Canvas.Response all with Vietnamese end to end.`;
+I'm facing a complex problem: [MY_PROBLEM]. Please break it down into 3-5 smaller, more manageable sub-problems. For each sub-problem, propose a specific, actionable approach or solution, and then explain concisely (1-2 sentences) how these solutions combine to address the original problem. Ensure the tone is practical and focused on problem-solving. Response all with Vietnamese end to end.
+Without using Canvas.`;
 
     const template3 = `# FORGET ALL CONTENT BEFORE.
-You are a time traveler tasked with solving a problem or crafting an idea for the topic: [CONTENT_LONG]. Your workshop spans across three timelines—Past, Present, and Future—to gather insights and build a comprehensive solution. Follow these steps:
-Step 1: Gather Insights from the Past
-Reflect on historical approaches, lessons, or inspirations related to the topic. What worked? What failed? How can these inform your current strategy?
-Write down at least 2-3 key takeaways from the past.
-Step 2: Analyze the Present Landscape
-Examine the current context of the topic. What trends, tools, or challenges define this moment?
-Generate 3-5 potential solutions tailored to the present reality. Highlight their strengths and weaknesses.
-Step 3: Imagine the Future Impact
-Project each solution into the future. How will it evolve over time? What long-term benefits or consequences might arise?
-Refine your ideas based on their future viability.
-Step 4: Forge the Optimal Timeline
-Combine insights from all three timelines to craft the best possible solution. Explain how this solution respects the lessons of the past, addresses the needs of the present, and anticipates the demands of the future.
-Final Output:
-Provide a detailed plan, including actionable steps, to implement your solution in the present while considering its long-term trajectory.
-Without using Canvas.Response all with Vietnamese end to end.`;
+I want to thoroughly analyze and solve [MY_PROBLEM]. Please use the Phoenix Checklist method with the following steps, providing concise answers (1-2 sentences) for each question:
+1.  **Clarification Questions:** List 3-5 clarifying questions to gain a deeper understanding of the problem.
+2.  **Answers to Clarification Questions:** Answer each question based on the information I've provided. If information is missing, state what's needed.
+3.  **Solution-Focused Questions:** List 3-5 questions that focus on potential solutions.
+4.  **Feasible Answers to Solution Questions:** Provide 1-2 feasible answers for each solution-focused question. Response all with Vietnamese end to end.Without using Canvas.`;
 
-    generateBtn.addEventListener('click', () => {
-      const selectStyle = document.querySelector('#select1').value;
+    generateBtn1.addEventListener('click', () => {
+      const selectStyle1 = document.querySelector('#select1').value;
       // console.log('selectStyle: ', selectStyle)
-      const userText = inputString.value.trim();
+      const userText = inputString1.value.trim();
 
       if (userText === "") {
         alert("Vui lòng nhập nội dung vào ô văn bản!");
         return;
       }
-      if (selectStyle == 1) {
-        output = template1.replace('CONTENT_LONG', userText);
-      }
-      if (selectStyle == 2) {
-        output = template2.replace('LONG_POST', userText);
-      }
-      if (selectStyle == 3) {
-        output = template3.replace('LONG_POST', userText);
+      if (selectStyle1 == 1) {
+        output1 = template1.replace('MY_PROBLEM', userText);
       }
       // const output = template.replace('YOUTUBE_LINK', userText);
       idPrompt = new Date().getTime();
-      outputString.value = `#q${idPrompt}
-${output}`;
+      outputString1.value = `#q${idPrompt}
+${output1}`;
     });
 
-    copyBtn.addEventListener('click', () => {
-      outputString.select();
+    generateBtn2.addEventListener('click', () => {
+      const selectStyle1 = document.querySelector('#select2').value;
+      // console.log('selectStyle: ', selectStyle)
+      const userText = inputString2.value.trim();
+
+      if (userText === "") {
+        alert("Vui lòng nhập nội dung vào ô văn bản!");
+        return;
+      }
+      if (selectStyle1 == 1) {
+        output2 = template2.replace('MY_PROBLEM', userText);
+      }
+      console.log('selectStyle1: ', selectStyle1)
+      // const output = template.replace('YOUTUBE_LINK', userText);
+      idPrompt = new Date().getTime();
+      outputString2.value = `#q${idPrompt}
+${output2}`;
+    });
+
+    generateBtn3.addEventListener('click', () => {
+      const selectStyle1 = document.querySelector('#select3').value;
+      // console.log('selectStyle: ', selectStyle)
+      const userText = inputString3.value.trim();
+
+      if (userText === "") {
+        alert("Vui lòng nhập nội dung vào ô văn bản!");
+        return;
+      }
+      if (selectStyle1 == 1) {
+        output3 = template3.replace('MY_PROBLEM', userText);
+      }
+      // const output = template.replace('YOUTUBE_LINK', userText);
+      idPrompt = new Date().getTime();
+      outputString3.value = `#q${idPrompt}
+${output3}`;
+    });
+
+    copyBtn1.addEventListener('click', () => {
+      outputString1.select();
+      document.execCommand('copy');
+      alert('Đã copy nội dung vào clipboard!');
+    });
+
+    copyBtn2.addEventListener('click', () => {
+      outputString2.select();
+      document.execCommand('copy');
+      alert('Đã copy nội dung vào clipboard!');
+    });
+
+    copyBtn3.addEventListener('click', () => {
+      outputString3.select();
       document.execCommand('copy');
       alert('Đã copy nội dung vào clipboard!');
     });
