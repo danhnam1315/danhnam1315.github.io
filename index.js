@@ -18,6 +18,7 @@ const navItems = [
     { title: "16-Gen Any Code", link: "/PromtAppv1/16-GenAnyCode.html", target: "_blank" },
     { title: "17-Tree Of Thought", link: "/PromtAppv1/17-TreeOfThought.html", target: "_blank" },
     { title: "18-Boosting Prompt", link: "/PromtAppv1/18-BoostingPrompt.html", target: "_blank" },
+    { title: "19-RDTF Template", link: "/PromtAppv1/19-RDTF-PromptTemplate.html", target: "_blank" },
     // { title: "Support", link: "#", target: "_blank" },
     // { title: "Support", link: "#support", target: "_blank" },
     // { title: "Support", link: "#support", target: "_blank" },

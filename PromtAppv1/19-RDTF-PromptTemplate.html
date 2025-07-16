@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>19-RDTF Prompt Template</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light p-4">
+
+  <div class="container">
+    <h2 class="mb-4">19-RDTF Prompt Template</h2>
+    <div class="mb-3">
+      <select id="select1" class="form-select" aria-label="Phong cách prompt">
+        <option value="1">Phong Cách 1-Phổ thông</option>
+        <option value="3">Phong Cách 3-Đột phá</option>
+        <option value="2">Phong Cách 2-Tập trung</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="inputString1" class="form-label">1. Vai trò:</label>
+      <textarea class="form-control" id="inputString1" rows="1"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="inputString2" class="form-label">2. Mô tả:</label>
+      <textarea class="form-control" id="inputString2" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="inputString3" class="form-label">3. Nhiệm vụ:</label>
+      <textarea class="form-control" id="inputString3" rows="4"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="inputString4" class="form-label">4. Định dạng:</label>
+      <textarea class="form-control" id="inputString4" rows="2"></textarea>
+    </div>
+    <button class="btn btn-primary mb-3 w-100" id="generateBtn">Generate</button>
+
+    <div class="mb-3">
+      <label for="outputString" class="form-label">Kết quả:</label>
+      <textarea class="form-control" id="outputString" rows="4"></textarea>
+    </div>
+    <button class="btn btn-success w-100" id="copyBtn">Copy It</button>
+  </div>
+
+  <script>
+    const generateBtn = document.getElementById('generateBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    let output = ""
+    const inputString1 = document.getElementById('inputString1');
+    const inputString2 = document.getElementById('inputString2');
+    const inputString3 = document.getElementById('inputString3');
+    const inputString4 = document.getElementById('inputString4');
+    const outputString = document.getElementById('outputString');
+
+    const template1 = `# FORGET ALL CONTENT BEFORE.
+1. Role: You are an expert in the field of [ROLES].
+2. Description: Key characteristics include [DESCRIPTIONS].
+3. Task: The task to be performed is to [TASKS].
+4. Format: Present the content in a [FORMATS].
+Response all with Vietnamese end to end.`;
+
+//     const template1 = `# FORGET ALL CONTENT BEFORE.
+// P1. I'm facing ERRORS in my LANGS = [_LANGS] CODES. As a LANGS = [_LANGS] CODES master and Technical Leader with 20 years of experience, your primary goal is to identify the root cause of these ERRORS and provide a complete, end-to-end corrected version of my code. Do not include any explanations for the fixes; just give me the full, corrected code.
+// Here are the CODES and ERRORS I'm encountering:
+// CODES = [_CODES]
+// ERRORS = [_ERRORS]
+// Response all with Vietnamese end to end.`;
+
+    const template2 = `# FORGET ALL CONTENT BEFORE.
+I have the following original prompt:
+[LONG_POST]
+Please perform the following steps silently (do not show analysis, only return the final result):
+SWOT Analysis: Perform a concise and easy-to-understand SWOT analysis of the original prompt (Strengths, Weaknesses, Opportunities, Threats).
+Optimize: Improve the prompt based on the SWOT results by:
+Adding specific details or context.
+Defining clear constraints (length, tone, format).
+Including examples if needed.
+Return: Only the optimized prompt, ready for use.
+Response all with English end to end.Without using Canvas.
+Your prompt response as P1.
+brandText = 'Response all with Vietnamese end to end'.
+Join brandText value into tail of P1.`;
+
+    const template3 = `# FORGET ALL CONTENT BEFORE.
+Given the original prompt:  
+X=[LONG_POST]  
+Do the following:  
+1. Silently analyze weaknesses of the original prompt.  
+2. Improve the prompt into [X_improved], addressing at least 2 weaknesses.  
+3. Create a meta-prompt to generate a quality checklist for [X_improved].  
+4. Return only the final output in this structure:  
+   - Requirement: [X_improved]  
+   - Meta-prompt: [Meta-prompt content]  
+   - Checklist: [5 evaluation criteria]  
+Response all with English end to end.Without using Canvas.
+Your prompt response as P1.
+brandText = 'Response all with Vietnamese end to end'.
+Join brandText value into tail of P1.`;
+
+    generateBtn.addEventListener('click', () => {
+      const selectStyle = document.querySelector('#select1').value;
+      // console.log('selectStyle: ', selectStyle)
+      const userText1 = inputString1.value.trim();
+      const userText2 = inputString2.value.trim();
+      const userText3 = inputString3.value.trim();
+      const userText4 = inputString4.value.trim();
+
+      if (userText1 === "" || userText2 === "" || userText3 === "" || userText4 === "") {
+        alert("Vui lòng nhập nội dung vào ô văn bản!");
+        return;
+      }
+      if (selectStyle == 1) {
+        _ROLES = template1.replace('ROLES', userText1);
+        _DESCRIPTIONS = _ROLES.replace('DESCRIPTIONS', userText2);
+        TASKS = _DESCRIPTIONS.replace('TASKS', userText3);
+        output = TASKS.replace('FORMATS', userText4);
+      }
+      if (selectStyle == 2) {
+        output = template2.replace('LONG_POST', userText);
+      }
+      if (selectStyle == 3) {
+        output = template3.replace('LONG_POST', userText);
+      }
+      // const output = template.replace('YOUTUBE_LINK', userText);
+      idPrompt = new Date().getTime();
+      outputString.value = `#q${idPrompt}
+${output}`;
+    });
+
+    copyBtn.addEventListener('click', () => {
+      outputString.select();
+      document.execCommand('copy');
+      alert('Đã copy nội dung vào clipboard!');
+    });
+  </script>
+
+</body>
+
+</html>
