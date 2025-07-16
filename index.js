@@ -17,6 +17,7 @@ const navItems = [
     { title: "15-Fix Bugs Python", link: "/PromtAppv1/15-FixBugPython.html", target: "_blank" },
     { title: "16-Gen Any Code", link: "/PromtAppv1/16-GenAnyCode.html", target: "_blank" },
     { title: "17-Tree Of Thought", link: "/PromtAppv1/17-TreeOfThought.html", target: "_blank" },
+    { title: "18-Boosting Prompt", link: "/PromtAppv1/18-BoostingPrompt.html", target: "_blank" },
     // { title: "Support", link: "#", target: "_blank" },
     // { title: "Support", link: "#support", target: "_blank" },
     // { title: "Support", link: "#support", target: "_blank" },
