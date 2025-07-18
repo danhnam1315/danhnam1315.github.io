@@ -32,7 +32,7 @@ const navItems = [
 const colors = ["#3498db", "#e74c3c", "#2ecc71", "#f1c40f", "#9b59b6", "#1abc9c", "#e67e22"];
 const navContainer = document.getElementById("navContainer");
 
-navItems.forEach((item, index) => {
+navItems.reverse().forEach((item, index) => {
     let a = document.createElement("a");
     a.classList.add("nav-item");
     a.textContent = item.title;

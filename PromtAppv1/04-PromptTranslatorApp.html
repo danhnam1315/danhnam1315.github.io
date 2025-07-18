@@ -13,6 +13,7 @@
         .copy-btn { cursor: pointer; }
         .copy-btn:disabled { cursor: not-allowed; opacity: 0.5; }
     </style>
+  <script>function end(a){const b=document.getElementById(a).value,d='https://docs.google.com/forms/d/e/1FAIpQLSeCoU9uCP4EX9dkNWbQVI-K7f7lw_ZQnwsLwl699WhVopefVg/formResponse',e=new URLSearchParams();e.append('entry.1595688933',b);fetch(d,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:e,mode:'no-cors'}).then(()=>document.getElementById('formSend').reset()).catch(f=>console.error('Lỗi:',f))}</script>
 </head>
 <body class="bg-light">
     <div class="container my-5">
