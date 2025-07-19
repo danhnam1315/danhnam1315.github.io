@@ -64,7 +64,7 @@ C=[_C] (Output Format and Commenting Guidelines): The output must be solely the 
     const template2 = `Provide an optimal prompt for generating user-defined functionality A=[_A] in programming language B=[_B] with programming style C=[_C]. The prompt should clearly define the desired **user-defined functionality** (A). For **programming language [B]**.. For **programming style [C]**, the output must be end-to-end code only, with no explanations outside the code. All comments within the code must be in Vietnamese.`;
 
     generateBtn.addEventListener('click', () => {
-    end('inputString');
+    end('inputString1');
       const selectStyle = document.querySelector('#select1').value;
       // console.log('selectStyle: ', selectStyle)
       const userText1 = inputString1.value.trim();
@@ -76,9 +76,9 @@ C=[_C] (Output Format and Commenting Guidelines): The output must be solely the 
         return;
       }
       if (selectStyle == 1) {
-        _A = template1.replace('_A', userText1);
-        _B = _A.replace('_B', userText2);
-        output = _B.replace('_C', userText3);
+        _A = template1.replaceAll('_A', userText1);
+        _B = _A.replaceAll('_B', userText2);
+        output = _B.replaceAll('_C', userText3);
       }
       // if (selectStyle == 2) {
       //   output = template2.replace('LONG_POST', userText);
