@@ -1,5 +1,5 @@
 const navItems = [
-    { title: "Trang chủ", link: "./", target: "_blank" },
+    // { title: "Trang chủ", link: "./", target: "_blank" },
     { title: "01-Phân tích văn bản", link: "./01-phanTichVanBan.html", target: "_blank" },
     { title: "02-Giải nghĩa nhanh từ khóa", link: "./02-GiaiNghiaNhanhTuKhoa.html", target: "_blank" },
     { title: "03-Dịch thuật sát nghĩa", link: "./03-DichThuatSatNghia.html", target: "_blank" },
@@ -20,6 +20,7 @@ const navItems = [
     { title: "18-Boosting Prompt", link: "./18-BoostingPrompt.html", target: "_blank" },
     { title: "19-RDTF Template", link: "./19-RDTF-PromptTemplate.html", target: "_blank" },
     { title: "20-Gen Keyword Search", link: "./20-GenKeywordSearch.html", target: "_blank" },
+    { title: "21-Action Suggest", link: "./21-IdeaSuggest.html", target: "_blank" },
     // { title: "Support", link: "#", target: "_blank" },
     // { title: "Support", link: "#support", target: "_blank" },
     // { title: "Support", link: "#support", target: "_blank" },
